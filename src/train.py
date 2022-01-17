@@ -85,6 +85,8 @@ def main():
     config = get_train_config()
 
     # device
+    os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
+    os.environ["CUDA_VISIBLE_DEVICES"] = config.device_num  # specify which GPU(s) to be used
     device, device_ids = setup_device(config.n_gpu)
 
     # tensorboard

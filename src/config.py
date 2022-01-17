@@ -43,6 +43,8 @@ def get_train_config():
     parser.add_argument("--data-dir", type=str, default='../data', help='data folder')
     parser.add_argument("--dataset", type=str, default='ImageNet', help="dataset for fine-tunning/evaluation")
     parser.add_argument("--num-classes", type=int, default=1000, help="number of classes in dataset")
+    parser.add_argument('--device_num', type=str, default = "0,1",
+                        help="Which device to use (0-7)")
     config = parser.parse_args()
 
     # model config
